@@ -1,0 +1,45 @@
+{% extends 'frontTemplate/frontBase.html.twig' %}
+
+{% block head %}
+	{% block title %}Plat
+	{% endblock %}
+	<meta property="og:url" content="https://http://127.0.0.1:8001/"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:title" content="When Great Minds Don’t Think Alike"/>
+	<meta property="og:description" content="ija mena dhouk lbenna"/>
+	<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"/>
+
+{% endblock %}
+{% block body %}
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v13.0" nonce="KHtZOKKp"></script>
+	<h1>Plat</h1>
+
+	<div class="example-wrapper">
+		
+		
+			<div class="card" style="width: 60rem;">
+            <div class="position-relative">
+									<img class="card-img-top" style="height: 600px; width:960px;" src="{{asset('uploads/') ~ plat.img}}" alt="Card image cap">
+									
+								</div>
+				
+				<div class="card-body">
+				<h2 class="card-title">{{plat.nom}}</h2>
+				<p class="description">{{plat.description}}</p>
+				<p class="description">{{ plat.prix}} $</p>
+
+
+				
+     
+				</div>
+				<a class="btn btn-primary"href="#"> commander </a>
+			</div>
+<div class="fb-share-button" data-href="{{ plat.id }}" data-layout="button" data-size="small">
+		<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8001%2Fplat%2FSearch%2F%257Bid%257D&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a>
+	</div>
+	
+
+	</div> 
+	
+{% endblock %}

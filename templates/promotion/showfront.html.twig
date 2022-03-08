@@ -1,0 +1,65 @@
+{% extends 'frontTemplate/frontBase.html.twig' %}
+
+{% block title %}Promotion{% endblock %}
+
+{% block body %}
+
+	<style>
+.example-wrapper {
+	
+	max-width: 800px;
+	width: 95%;
+	font: 18px / 1.5 sans-serif;
+}
+
+}
+		</style>
+ 
+	<h1>Promotion</h1>
+
+	<div class="example-wrapper">
+		
+		
+			<div class="card" style="width: 60rem;">
+            <div class="position-relative">
+									<img class="card-img-top" style="height: 600px; width:960px;" src="{{asset('uploads/') ~ promotion.image}}" alt="Card image cap">
+									<div class="card-actions"> 
+										<div class=" badge badge-foodwagon bg-primary p-4">
+											<div class="d-flex flex-between-center">
+												<div class="text-white fs-7">{{promotion.pourcentage}}</div>
+												<div class="d-block text-white fs-2">%
+													<br/>
+													<div class="fw-normal fs-1 mt-2">Off</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+				
+				<div class="card-body">
+				<h2 class="card-title">{{promotion.nom}}</h2>
+				<p class="description">{{promotion.description}}</p>
+				<p class="description">Prix sans reduction {{ promotion.prixoriginal	}} $</p>
+				<p class="description">Prix avec reduction {{ promotion.prixpromotion}} $</p>
+				<p class="description">Cette offre ce termine le  {{ promotion.datefin|date('d/m/Y')}} </p>
+
+
+				
+    
+				</div>
+				<a class="btn btn-primary"href=""> Commender </a>
+			</div>
+
+	
+
+	</div>
+
+	
+<a class="btn btn-dark" href="{{ path('promotion_front') }}">back to list</a>
+</div>
+   
+
+    
+
+    
+{% endblock %}

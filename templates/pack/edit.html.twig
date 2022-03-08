@@ -1,0 +1,13 @@
+{% extends 'backTemplateadmin/pack.html.twig' %}
+
+{% block title %}Edit Pack{% endblock %}
+
+{% block body %}
+    <h1>Edit Pack</h1>
+
+    {{ include('pack/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class="btn btn-dark" href="{{ path('pack_index') }}">back to list</a>
+
+    {{ include('pack/_delete_form.html.twig') }}
+{% endblock %}

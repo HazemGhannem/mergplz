@@ -1,0 +1,21 @@
+
+
+{% block body %}
+<div>
+<div >-------------------------------------------------------</div>
+<div class="center" style=" font-style: normal; color: rgb(75, 100, 86); ">By FlyFood</div>
+<h1 style="font-weight: 700; font-style: italic; color: rgb(75, 100, 86); ">{{ coupon.nom }}</h1> 
+<div >-----------------------------</div>
+   
+<h1 class="center" style="  font-style: italic; color: rgb(75, 100, 86);">{{ coupon.pourcentage }} % OFF</h1>
+
+<div> ----------------------------- </div>
+<div class="center" style=" font-style: normal; color: rgb(75, 100, 86); ">This promo is special for you and</div>
+<div class="center" style=" font-style: normal; color: rgb(75, 100, 86); ">valid {{ coupon.datedebut|date('d/m/Y') }}-{{ coupon.datefin|date('d/m/Y') }}</div>
+<h2 class="center" style=" font-style: italic; color: rgb(75, 100, 86); ">Your coupon code</h2> 
+<h1 class="center" style=" font-style: italic; color: rgb(75, 100, 86); ">{{ coupon.code }}</h1>
+<div >-------------------------------------------------------</div>
+</div>
+
+    
+{% endblock %}

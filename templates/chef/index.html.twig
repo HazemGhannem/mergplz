@@ -1,0 +1,44 @@
+{% extends 'backTemplateResto/chef.html.twig' %}
+
+{% block title %}Chef index
+{% endblock %}
+
+{% block body %}
+	<h1>Gestion des  Chefs</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+
+				<th>Nom</th>
+				<th>Specialité</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for chef in chefs %}
+				<tr>
+
+					<td>{{ chef.nom }}</td>
+					<td>{{ chef.specialitee }}</td>
+					<td>
+						<a class="btn btn-warning" href="{{ path('chef_show', {'id': chef.id}) }}">show</a>
+						<a class="btn btn-warning" href="{{ path('chef_edit', {'id': chef.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="4">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a class="btn btn-dark" href="{{ path('chef_new') }}">Create new</a>
+	<div class="container py-5">
+		<div class="d-flex justify-content-center">
+
+			{{ knp_pagination_render(chefs) }}
+		</div>
+	</div>
+{% endblock %}

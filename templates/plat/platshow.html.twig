@@ -1,0 +1,46 @@
+{% extends 'frontTemplate/frontBase.html.twig' %}
+
+{% block title %}Plat index
+{% endblock %}
+
+{% block body %}
+
+</div></div>{% block javascripts %}{% endblock %}<div class="album py-5 bg-light">
+
+<div class="container">
+	<h1 class="fw-bolder mb-4">Listes des  Plats</h1>
+
+
+	<div class="container sm-1">
+		<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+			{% for item in var %}
+
+				<div class="card mx-2 py-4"> 
+
+
+					<a href="{{ path('platshow', {id: item.id}) }}"></a>
+
+
+					<img class="img-fluid img-top rounded-3 w-100" style="height:200px;" src="{{asset('uploads/') ~ item.img}}" alt="...">
+
+
+					<h5 class="card-text" class="text-center">{{item.nom}}</h5>
+					<p class="card-text">{{item.description}}</p>
+
+
+					<div class="card-footer text-center">
+						<a class="btn btn-outline-warning" href="{{ path('platshow', {'id': item.id}) }}">View options</a>
+					</div>
+
+
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="container py-5">
+		<div class="d-flex justify-content-center">
+
+			{{ knp_pagination_render(var) }}
+		</div>
+	</div>
+</section>{% endblock %}

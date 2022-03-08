@@ -1,0 +1,47 @@
+{% extends 'backTemplateResto/categorie.html.twig' %}
+
+{% block title %}Categorie index
+{% endblock %}
+
+{% block body %}
+	<h1>Gestion des Categories</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Description</th>
+				<th>image</th>
+				<th>actions</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			{% for categorie in var %}
+				<tr>
+					<td>{{ categorie.nom }}</td>
+					<td>{{ categorie.description }}</td>
+					<td>
+						<img id="img" class="card-img-top img-fluid" style="height: 150px; width:150px;" src="/uploads/{{categorie.image}}"></td>
+					<td>
+						<a class="btn btn-warning" href="{{ path('categorie_show', {'id': categorie.id}) }}">show</a>
+						<a class="btn btn-warning" href="{{ path('categorie_edit', {'id': categorie.id}) }}">edit</a>
+
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="4">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a class="btn btn-dark" href="{{ path('categorie_new') }}">Create new</a>
+	<div class="container py-5">
+		<div class="d-flex justify-content-center">
+
+			{{ knp_pagination_render(var) }}
+		</div>
+	</div>
+{% endblock %}

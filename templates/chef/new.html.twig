@@ -1,0 +1,11 @@
+{% extends 'backTemplateResto/chef.html.twig' %}
+
+{% block title %}New Chef{% endblock %}
+
+{% block body %}
+    <h1>Create new Chef</h1>
+
+    {{ include('chef/_form.html.twig') }}
+
+    <a href="{{ path('chef_index') }}">back to list</a>
+{% endblock %}

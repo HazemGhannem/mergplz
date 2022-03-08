@@ -1,0 +1,29 @@
+{% extends 'backTemplateadmin/pack.html.twig' %}
+
+{% block title %}Pack{% endblock %}
+
+{% block body %}
+    <h1>Pack</h1>
+
+    <table class="table">
+        <tbody>
+           
+            <tr>
+                <th>Type</th>
+                <td>{{ pack.type }}</td>
+            </tr>
+            <th>Prix</th>
+                <td>{{ pack.prix }}</td>
+            </tr>
+            <th>Description</th>
+                <td>{{ pack.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-dark" href="{{ path('pack_index') }}">back to list</a>
+
+    <a class="btn btn-dark" href="{{ path('pack_edit', {'id': pack.id}) }}">edit</a>
+
+    {{ include('pack/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'backTemplateResto/Promotion.html.twig' %}
+
+{% block title %}New Promotion{% endblock %}
+
+{% block body %}
+    <h1>Create new Promotion</h1>
+
+    {{ include('promotion/_form.html.twig') }}
+
+    <a class="btn btn-dark" href="{{ path('promotion_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'backTemplateResto/Promotion.html.twig' %}
+
+{% block title %}Promotion{% endblock %}
+
+{% block body %}
+    <h1>Promotion</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ promotion.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ promotion.nom }}</td>
+            </tr>
+            <tr>
+                <th>Pourcentage</th>
+                <td>{{ promotion.pourcentage }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ promotion.description }}</td>
+            </tr>
+            <tr>
+                <th>Prixoriginal</th>
+                <td>{{ promotion.prixoriginal }}</td>
+            </tr>
+            <tr>
+                <th>Prixpromotion</th>
+                <td>{{ promotion.prixpromotion }}</td>
+            </tr>
+            <tr>
+                <th>Datedebut</th>
+                <td>{{ promotion.datedebut|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{{ promotion.datefin|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img id="img"  class="card-img-top img-fluid" style="height: 150px; width:250px;" src="/uploads/{{promotion.image}}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-dark" href="{{ path('promotion_index') }}">back to list</a>
+
+    <a class="btn btn-dark" href="{{ path('promotion_edit', {'id': promotion.id}) }}">edit</a>
+
+    {{ include('promotion/_delete_form.html.twig') }}
+{% endblock %}

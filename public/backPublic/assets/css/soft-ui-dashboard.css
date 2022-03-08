@@ -3597,7 +3597,10 @@ fieldset:disabled .btn {
   box-shadow: 0 0 0 0.2rem rgba(211, 48, 173, 0.5);
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> yass
 .btn-primary:disabled,
 .btn-primary.disabled {
   color: #fff;
@@ -4171,7 +4174,11 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-danger:hover {
+<<<<<<< HEAD
    color: #fff; 
+=======
+  color: #fff;
+>>>>>>> yass
   background-color: #ea0606;
   border-color: #ea0606;
 }
@@ -19107,7 +19114,11 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-warning:hover:not(.active) {
+<<<<<<< HEAD
   /* background-color: transparent; */
+=======
+  background-color: transparent;
+>>>>>>> yass
   opacity: .75;
   box-shadow: none;
   color: #fbcf33;
@@ -19146,7 +19157,11 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-danger:hover:not(.active) {
+<<<<<<< HEAD
   /* background-color: transparent; */
+=======
+  background-color: transparent;
+>>>>>>> yass
   opacity: .75;
   box-shadow: none;
   color: #ea0606;
@@ -24912,6 +24927,7 @@ pre[class*="language-"] {
   background-color: #999;
   width: 11px;
 }
+<<<<<<< HEAD
 .image-ronde{
   width : 150px; height : 150px;
   border: none;
@@ -24919,6 +24935,8 @@ pre[class*="language-"] {
   -webkit-border-radius : 75px;
   border-radius : 75px;
 }
+=======
+>>>>>>> yass
 
 /* MS supports */
 @supports (-ms-overflow-style: none) {

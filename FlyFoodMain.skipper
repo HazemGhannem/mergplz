@@ -1,0 +1,527 @@
+<?xml version="1.0"?>
+<skipper version="3.2.36.1775" mvc="Symfony" orm="Doctrine2" name="FlyFood-main" uuid="120f7ffb-fbce-4c7a-9d87-97b49a900a64">
+  <module name="\src/Entity" local-name="src/Entity" namespace="\App\Entity" local-namespace="\App\Entity" export-format="Doctrine2Php" export-path="src/Entity" uuid="7ea4e919-2c6c-4525-963d-8ae6a6ae8fb0">
+    <entity name="\App\Entity\Categorie" local-name="Categorie" namespace="\App\Entity" uuid="20367ebe-71e1-451c-a181-47845d8a71d1">
+      <field name="id" type="integer" required="true" primary="true" uuid="43191f2c-cb2c-4d92-839a-eea19bf51692">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="c7ab3052-14d8-4b61-90e9-19e5849cec59"/>
+      <field name="description" type="text" uuid="66345380-6819-43f4-9c9f-3f6eb789447e"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\CategorieRepository</attribute>
+        <attribute name="export-file-name">Categorie.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="\App\Entity\Chef" local-name="Chef" namespace="\App\Entity" uuid="81b64d6a-25e9-49be-a49e-ce309d41a43d">
+      <field name="id" type="integer" required="true" primary="true" uuid="54c75174-96b3-4617-ba8d-212bd0230e8c">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="78155cd9-71bf-4068-aeb5-a27d7d4cb466"/>
+      <field name="specialitee" type="string" size="255" required="true" uuid="c776be99-4bb4-418a-a342-8e43c94187ff"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\ChefRepository</attribute>
+        <attribute name="export-file-name">Chef.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="\App\Entity\Commande" local-name="Commande" namespace="\App\Entity" uuid="e5701850-595f-447f-a45d-650dc8dde6c6">
+      <field name="id" type="integer" required="true" primary="true" uuid="fed3be6f-8ebf-423c-8c92-1b4a3209405c">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="num" type="integer" required="true" uuid="3cf72b34-c0a1-4e08-8749-1c37b334f916"/>
+      <field name="dateCommande" type="datetime" required="true" uuid="5c9a4202-4c21-4a32-a5d7-077b75aea99b"/>
+      <field name="etat" type="string" size="255" required="true" uuid="d9e8ffaa-96a2-41b3-89f1-2f34aaed6759"/>
+      <field name="estPayee" type="boolean" uuid="23de4ac1-9749-445f-8cce-499b488816fb"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\CommandeRepository</attribute>
+        <attribute name="export-file-name">Commande.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="\App\Entity\CommandeItem" local-name="CommandeItem" namespace="\App\Entity" uuid="234da387-7e3d-4d88-8d8a-ade264de4d08">
+      <field name="id" type="integer" required="true" primary="true" uuid="a70f21cd-5c60-49ae-a0e1-c45911de07c1">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="quantitee" type="integer" required="true" uuid="ed592e07-1840-4700-a701-3c3460e7f290"/>
+      <field name="plat_id" required="true" uuid="61a768c9-ac90-4d46-8a86-9f68138377d7"/>
+      <field name="commande_id" uuid="559500f2-74b4-414c-b573-13decae6c08f"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\CommandeItemRepository</attribute>
+        <attribute name="export-file-name">CommandeItem.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\CommandeItem" to="\App\Entity\Plat" owner-alias="commandeItems" inverse-alias="plat" many-owner="true" many-inverse="false" parent-required="true" uuid="d627e19b-b489-4887-a2e1-0618020587b6">
+      <association-field from="plat_id" to="id" uuid="5d1739e0-7f42-42c1-99d4-c0ddd11e4352"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="\App\Entity\CommandeItem" to="\App\Entity\Commande" owner-alias="commandeItems" inverse-alias="commande" many-owner="true" many-inverse="false" uuid="326278f1-d7b6-4658-b6f1-b93f65863ccb">
+      <association-field from="commande_id" to="id" uuid="8a6425cb-b25e-4c0d-9a6f-0fa2c860d9a0"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Commentaire" local-name="Commentaire" namespace="\App\Entity" uuid="25939dc2-d5ff-4e43-96f4-aba1b3adc61b">
+      <field name="id" type="integer" required="true" primary="true" uuid="1ba71d47-1cae-4384-b410-5937a0919c82">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="contenu" type="text" required="true" uuid="da58ca82-f596-464b-b15a-8f060df1895d"/>
+      <field name="date" type="datetime" required="true" uuid="132d4f6a-b78f-4575-b897-36e982782482"/>
+      <field name="utilisateur_id" required="true" uuid="5a7cacf8-b58a-4e68-bb1c-e1084f6af489"/>
+      <field name="restaurant_id" required="true" uuid="b3f11c77-8ebd-42a2-bcf1-4a58ab8a5eb3"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\CommentaireRepository</attribute>
+        <attribute name="export-file-name">Commentaire.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Commentaire" to="\App\Entity\Utilisateur" owner-alias="" inverse-alias="utilisateur" many-owner="true" many-inverse="false" parent-required="true" uuid="e4e5e8a3-5049-473d-9f3f-0c7b196d9a25">
+      <association-field from="utilisateur_id" to="id" uuid="c30571f7-780c-430d-8131-01b5fd52e0fd"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="\App\Entity\Commentaire" to="\App\Entity\Restaurant" owner-alias="commentaires" inverse-alias="restaurant" many-owner="true" many-inverse="false" parent-required="true" uuid="3c8a6375-1a1c-470e-872a-178292bc10c5">
+      <association-field from="restaurant_id" to="id" uuid="e5bfd4b2-883c-49a2-8d99-59b659512ef8"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse">
+          <attribute name="orphan-removal">true</attribute>
+        </attribute>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Coupon" local-name="Coupon" namespace="\App\Entity" uuid="bd66ac52-25f3-46d1-8d03-757c9bd0e4e9">
+      <field name="id" type="integer" required="true" primary="true" uuid="897a1ba3-e5e5-412a-90ac-c31742093a97">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="code" type="string" size="255" required="true" uuid="73fe7bfb-c7ad-4ace-98b1-b06faa7c8941"/>
+      <field name="utilisateur_id" uuid="71cdb452-8264-4955-8d68-7220b6c96c2b"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\CouponRepository</attribute>
+        <attribute name="export-file-name">Coupon.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Coupon" to="\App\Entity\Utilisateur" owner-alias="coupons" inverse-alias="utilisateur" many-owner="true" many-inverse="false" uuid="8e1d7d36-a543-4f7a-be1f-2e8102f3f3fb">
+      <association-field from="utilisateur_id" to="id" uuid="1f3ef48e-b9ac-42bb-acd1-90438694c63d"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Evennement" local-name="Evennement" namespace="\App\Entity" uuid="f6cb870f-9b84-4767-b3b7-4bfea0666223">
+      <field name="id" type="integer" required="true" primary="true" uuid="4f3513a3-1099-401d-bdda-091329efc7a2">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="e572ed52-071f-4cdd-9bae-e300aed45ca2"/>
+      <field name="date" type="datetime" required="true" uuid="fd34d468-7d8e-4eac-8eb0-7f016bc4c16e"/>
+      <field name="restaurant_id" required="true" uuid="0019c4e5-00ef-4377-a06d-0e45685a4b1f"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\EvennementRepository</attribute>
+        <attribute name="export-file-name">Evennement.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Evennement" to="\App\Entity\Restaurant" owner-alias="evennements" inverse-alias="restaurant" many-owner="true" many-inverse="false" parent-required="true" uuid="ea6cd589-ca7c-469f-b797-daa8153062eb">
+      <association-field from="restaurant_id" to="id" uuid="1dcb3fcc-fdc8-41d5-94a8-43ecee4eb3ae"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse">
+          <attribute name="orphan-removal">true</attribute>
+        </attribute>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Images" local-name="Images" namespace="\App\Entity" uuid="bcfa82a4-8440-4896-bbbb-e6bb8189c5f8">
+      <field name="id" type="integer" required="true" primary="true" uuid="358408d9-bbf4-48b4-83f5-76dbc3410a6f">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="8489c248-609e-4bf4-881d-89962ca554e8"/>
+      <field name="url" type="string" size="255" required="true" uuid="b436faaa-cc79-4c79-8095-422edd87b424"/>
+      <field name="restaurant_id" uuid="da144f89-f40f-486e-83e6-05d249eda919"/>
+      <field name="plat_id" uuid="1e73a7a7-1d15-416a-aef8-18e239bcf550"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\ImagesRepository</attribute>
+        <attribute name="export-file-name">Images.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Images" to="\App\Entity\Restaurant" owner-alias="images" inverse-alias="restaurant" many-owner="true" many-inverse="false" uuid="2f933534-62e4-4c51-97a1-0bdbf4297826">
+      <association-field from="restaurant_id" to="id" uuid="e96159f4-e40c-4dcc-b2cc-cfe145dd1a11"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="\App\Entity\Images" to="\App\Entity\Plat" owner-alias="images" inverse-alias="plat" many-owner="true" many-inverse="false" uuid="deece07d-1955-42e1-ab32-a92d88c902e9">
+      <association-field from="plat_id" to="id" uuid="bfa4124c-b5d7-48a4-a4a1-85ab5c3cd22b"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Livraison" local-name="Livraison" namespace="\App\Entity" uuid="9bda4377-e46f-4f26-a19b-57022cd435f5">
+      <field name="id" type="integer" required="true" primary="true" uuid="ed4d9574-f179-4b69-a73e-83c356eed9ef">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="estLivree" type="boolean" required="true" uuid="03061cf9-d52a-41cd-8047-4f0945642b4f"/>
+      <field name="longitude" type="string" size="255" required="true" uuid="46889845-beb3-4693-a280-c3726ed226b9"/>
+      <field name="latitude" type="string" size="255" required="true" uuid="2880228b-d397-40d0-8cbb-05381d1cbe25"/>
+      <field name="commande_id" required="true" unique="true" uuid="3938c0d9-71de-42fe-8af5-87ad68265165"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\LivraisonRepository</attribute>
+        <attribute name="export-file-name">Livraison.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Livraison" to="\App\Entity\Commande" owner-alias="livraison" inverse-alias="commande" many-owner="false" many-inverse="false" parent-required="true" uuid="785fa2a0-9ccc-4ec0-b25b-e87e760963a1">
+      <association-field from="commande_id" to="id" uuid="09b6bfea-90de-4ee1-9b14-9539a7e858b3"/>
+      <orm-attributes>
+        <attribute name="side-owning">
+          <attribute name="cascade">
+            <attribute name="cascade-persist">true</attribute>
+            <attribute name="cascade-remove">true</attribute>
+          </attribute>
+        </attribute>
+        <attribute name="side-inverse">
+          <attribute name="cascade">
+            <attribute name="cascade-persist">true</attribute>
+            <attribute name="cascade-remove">true</attribute>
+          </attribute>
+        </attribute>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Livreur" local-name="Livreur" namespace="\App\Entity" uuid="db2c958f-85b5-480e-ba23-7a9bf8a27c03">
+      <field name="id" type="integer" required="true" primary="true" uuid="9e829c00-fb62-44ad-bf5f-692b039705d6">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="a249da81-0b4c-4a02-af76-33ce97fb5278"/>
+      <field name="ville_id" required="true" uuid="7ea64fa7-9fb5-443a-9241-458e11400f73"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\LivreurRepository</attribute>
+        <attribute name="export-file-name">Livreur.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Livreur" to="\App\Entity\Ville" owner-alias="livreurs" inverse-alias="ville" many-owner="true" many-inverse="false" parent-required="true" uuid="83381f5e-f98e-4c9c-9491-376bdeed7e8a">
+      <association-field from="ville_id" to="id" uuid="79491adb-ec0c-42f6-a2d1-49b4523b3a7f"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Pack" local-name="Pack" namespace="\App\Entity" uuid="1999d970-ad16-4a68-8106-01a6bc59e3d5">
+      <field name="id" type="integer" required="true" primary="true" uuid="ed119288-067c-4717-8e10-933ad6e13bcb">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="type" type="string" size="255" required="true" uuid="38962818-1382-4899-ab71-2905a843ee80"/>
+      <field name="utilisateur_id" uuid="1e67d4b7-458f-4aa4-8553-8e43cf061279"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\PackRepository</attribute>
+        <attribute name="export-file-name">Pack.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Pack" to="\App\Entity\Utilisateur" owner-alias="pack" inverse-alias="utilisateur" many-owner="true" many-inverse="false" uuid="824c15ac-d0b3-4a75-bcfe-d13b87947b1c">
+      <association-field from="utilisateur_id" to="id" uuid="401387ab-7cad-4421-9adc-b63f6f98dc31"/>
+      <orm-attributes>
+        <attribute name="side-owning">
+          <attribute name="cascade">
+            <attribute name="cascade-persist">true</attribute>
+            <attribute name="cascade-remove">true</attribute>
+          </attribute>
+        </attribute>
+        <attribute name="side-inverse">
+          <attribute name="cascade">
+            <attribute name="cascade-persist">true</attribute>
+            <attribute name="cascade-remove">true</attribute>
+          </attribute>
+        </attribute>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Pays" local-name="Pays" namespace="\App\Entity" uuid="509c29ac-cbe4-4e42-9ded-c7eaf6835e8c">
+      <field name="id" type="integer" required="true" primary="true" uuid="cbbbe12a-66dc-4b4c-bf5f-401023dba340">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="9bf9c72f-553d-4b16-86e7-27679500eb3d"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\PaysRepository</attribute>
+        <attribute name="export-file-name">Pays.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="\App\Entity\Plat" local-name="Plat" namespace="\App\Entity" uuid="149ab5b4-db07-435d-bcd4-26e9220392cb">
+      <field name="id" type="integer" required="true" primary="true" uuid="bc27c9f5-4f18-43b9-84dc-b33115e122c6">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="8456e454-3dc8-466e-9e3d-8b8d6c4026d5"/>
+      <field name="description" type="string" size="255" required="true" uuid="1b976763-b3cc-4c16-903c-cdcc45e2bedf"/>
+      <field name="note" type="float" required="true" uuid="9c5c9394-348a-47ae-a905-bd7b3dd74251"/>
+      <field name="restaurant_id" required="true" uuid="c03a1ec2-f454-48c5-8f9e-2938b273a6f4"/>
+      <field name="categorie_id" required="true" uuid="5fed4e65-e449-4343-82fa-62c38cedef2a"/>
+      <field name="chef_id" uuid="710533cc-cc2c-4b38-a659-839a8cbbfdee"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\PlatRepository</attribute>
+        <attribute name="export-file-name">Plat.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Plat" to="\App\Entity\Restaurant" owner-alias="plats" inverse-alias="restaurant" many-owner="true" many-inverse="false" parent-required="true" uuid="33efab5d-3916-452d-b19e-9127994a76a8">
+      <association-field from="restaurant_id" to="id" uuid="31ef74a3-380a-4dbb-9e84-1a8a67819073"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse">
+          <attribute name="orphan-removal">true</attribute>
+        </attribute>
+      </orm-attributes>
+    </association>
+    <association from="\App\Entity\Plat" to="\App\Entity\Categorie" owner-alias="plats" inverse-alias="categorie" many-owner="true" many-inverse="false" parent-required="true" uuid="6bdf6665-73cf-4ea5-8d3a-ba1175dc438b">
+      <association-field from="categorie_id" to="id" uuid="f2d39163-791b-4430-bb78-02baf4c0573d"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="\App\Entity\Plat" to="\App\Entity\Chef" owner-alias="plats" inverse-alias="chef" many-owner="true" many-inverse="false" uuid="e2c07c75-d3b5-47e8-bedc-d9de465e7cae">
+      <association-field from="chef_id" to="id" uuid="5a6fff43-d86a-4382-87b2-963bc2417165"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Promotion" local-name="Promotion" namespace="\App\Entity" uuid="2970ff11-65bd-473f-9e46-1a35f6707f0e">
+      <field name="id" type="integer" required="true" primary="true" uuid="6946d568-53bb-422a-8f37-25ea53725dca">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="92970eeb-58e4-4246-b285-32c252f1e63e"/>
+      <field name="image" type="string" size="255" required="true" uuid="402fd034-b16f-4f2a-8ff6-199cfbc93ecc"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\PromotionRepository</attribute>
+        <attribute name="export-file-name">Promotion.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="\App\Entity\Reservation" local-name="Reservation" namespace="\App\Entity" uuid="21052770-3dff-433c-8452-3599073bafe4">
+      <field name="id" type="integer" required="true" primary="true" uuid="27b63947-4409-4681-839d-84e480f09d1a">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="rendezVous" type="datetime" required="true" uuid="7377d655-5e8a-4c4f-b925-f6e167faba27"/>
+      <field name="estReservee" type="boolean" uuid="6db0cb14-0f27-44e2-b230-02a3184ea10e"/>
+      <field name="commande_id" required="true" unique="true" uuid="855b95ea-2e3b-431c-911a-8c8bebca68f8"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\ReservationRepository</attribute>
+        <attribute name="export-file-name">Reservation.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Reservation" to="\App\Entity\Commande" owner-alias="reservation" inverse-alias="commande" many-owner="false" many-inverse="false" parent-required="true" uuid="71551c6e-6b61-4a91-8d3f-6f6c2e56b1fc">
+      <association-field from="commande_id" to="id" uuid="9cce2dad-09c2-458a-af88-872f82da70f5"/>
+      <orm-attributes>
+        <attribute name="side-owning">
+          <attribute name="cascade">
+            <attribute name="cascade-persist">true</attribute>
+            <attribute name="cascade-remove">true</attribute>
+          </attribute>
+        </attribute>
+        <attribute name="side-inverse">
+          <attribute name="cascade">
+            <attribute name="cascade-persist">true</attribute>
+            <attribute name="cascade-remove">true</attribute>
+          </attribute>
+        </attribute>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Restaurant" local-name="Restaurant" namespace="\App\Entity" uuid="59554550-66fd-41de-b843-99e81c61b7ef">
+      <field name="id" type="integer" required="true" primary="true" uuid="898cd5ae-b76d-4f98-ba7f-9ad6224999b9">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="27b61f7b-0ac8-48ef-b2f8-8a02b90f8bae"/>
+      <field name="specialitee" type="string" size="255" required="true" uuid="f3c8887c-0d87-439d-8460-ebc4844beaf5"/>
+      <field name="note" type="integer" required="true" uuid="848981ac-1c54-42f0-a53f-87be6880b745"/>
+      <field name="ville_id" required="true" uuid="aa74c895-8beb-4611-a418-604afbb3063d"/>
+      <field name="proprietaire_id" required="true" uuid="9d4cbe7c-2c7b-47b1-953b-1c8778ebc603"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\RestaurantRepository</attribute>
+        <attribute name="export-file-name">Restaurant.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Restaurant" to="\App\Entity\Ville" owner-alias="restaurants" inverse-alias="ville" many-owner="true" many-inverse="false" parent-required="true" uuid="2b81369f-2f10-42d4-80c8-b9153ac4852b">
+      <association-field from="ville_id" to="id" uuid="51a131dc-2bb6-46ef-9032-d7d7f1418316"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="\App\Entity\Restaurant" to="\App\Entity\Utilisateur" owner-alias="restaurants" inverse-alias="proprietaire" many-owner="true" many-inverse="false" parent-required="true" uuid="c6abd049-d92e-4c85-86a2-a988375d2cb7">
+      <association-field from="proprietaire_id" to="id" uuid="97e7a36c-b52e-4bdf-bc16-ef6910987161"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Table" local-name="Table" namespace="\App\Entity" uuid="2932376a-8280-47b6-b9fe-fe20986d55f5">
+      <field name="id" type="integer" required="true" primary="true" uuid="16b73d45-317b-4534-9230-039bcff6b3e3">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="num" type="integer" required="true" uuid="87387ada-b183-4ade-98f3-0a9bc5df4d1f"/>
+      <field name="estVip" type="boolean" uuid="7be081ef-7da6-4c83-90a7-ca24ddccc4ac"/>
+      <field name="restaurant_id" uuid="a479da58-a905-4a15-985f-4037ef1c782d"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\TableRepository</attribute>
+        <attribute name="table">`table`</attribute>
+        <attribute name="export-file-name">Table.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Table" to="\App\Entity\Restaurant" owner-alias="tables" inverse-alias="restaurant" many-owner="true" many-inverse="false" uuid="d49d7760-ffbc-496b-b0db-7c8c5468c379">
+      <association-field from="restaurant_id" to="id" uuid="5b22609b-dc66-4ae7-a63e-3bb49c007548"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <entity name="\App\Entity\Utilisateur" local-name="Utilisateur" namespace="\App\Entity" uuid="2580aca0-91bb-4eba-bd8a-775b10b72389">
+      <field name="id" type="integer" required="true" primary="true" uuid="ddb12738-c0fc-41e1-afcf-bd15b4cb4f86">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="628394de-4064-424e-9662-b7f622fa8d42"/>
+      <field name="prenom" type="string" size="255" required="true" uuid="15546359-88ed-4679-967d-4b077b005b48"/>
+      <field name="numTel" type="integer" required="true" uuid="921d3362-775b-4afd-b633-1f65a5f1ef96"/>
+      <field name="adresse" type="string" size="255" required="true" uuid="24104f36-c304-4fa2-aa62-8e0c7fa71c25"/>
+      <field name="mail" type="string" size="255" required="true" uuid="630f6084-1e3f-47fc-88d5-e6f0e09057cc"/>
+      <field name="mdpHash" type="string" size="255" required="true" uuid="cbf595c1-d4dc-4616-bd06-05c1b9b59800"/>
+      <field name="role" type="string" size="255" required="true" uuid="595155ac-99dd-4ed5-9868-f3e0499833be"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\UtilisateurRepository</attribute>
+        <attribute name="export-file-name">Utilisateur.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="\App\Entity\Ville" local-name="Ville" namespace="\App\Entity" uuid="0142fe12-7496-4602-8a3a-2eb2b680f284">
+      <field name="id" type="integer" required="true" primary="true" uuid="d611ec96-5189-48ec-8c86-b16433f9bd55">
+        <orm-attributes>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="nom" type="string" size="255" required="true" uuid="9a9781dd-290f-4ae4-8851-4fbe3ae919bd"/>
+      <field name="pays_id" required="true" uuid="6a3f246c-e3b8-4ab4-817d-3a63eb136c8d"/>
+      <orm-attributes>
+        <attribute name="repository-class">App\Entity\VilleRepository</attribute>
+        <attribute name="export-file-name">Ville.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="\App\Entity\Ville" to="\App\Entity\Pays" owner-alias="villes" inverse-alias="pays" many-owner="true" many-inverse="false" parent-required="true" uuid="4e50989a-704c-456e-9443-70bdd83c9118">
+      <association-field from="pays_id" to="id" uuid="9ce8e608-e3c6-418c-ac72-5327d5c75960"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse">
+          <attribute name="orphan-removal">true</attribute>
+        </attribute>
+      </orm-attributes>
+    </association>
+  </module>
+  <visual-data>
+    <association uuid="2b81369f-2f10-42d4-80c8-b9153ac4852b" color="#C774AF"/>
+    <association uuid="2f933534-62e4-4c51-97a1-0bdbf4297826" color="#8A54A2"/>
+    <association uuid="326278f1-d7b6-4658-b6f1-b93f65863ccb" color="#61D351"/>
+    <association uuid="33efab5d-3916-452d-b19e-9127994a76a8" color="#61D351"/>
+    <association uuid="3c8a6375-1a1c-470e-872a-178292bc10c5" color="#F4931F"/>
+    <association uuid="4e50989a-704c-456e-9443-70bdd83c9118" color="#00B4D0"/>
+    <association uuid="6bdf6665-73cf-4ea5-8d3a-ba1175dc438b" color="#CDC32B"/>
+    <association uuid="71551c6e-6b61-4a91-8d3f-6f6c2e56b1fc" color="#B31F24"/>
+    <association uuid="785fa2a0-9ccc-4ec0-b25b-e87e760963a1" color="#00B4D0"/>
+    <association uuid="824c15ac-d0b3-4a75-bcfe-d13b87947b1c" color="#0A783D"/>
+    <association uuid="83381f5e-f98e-4c9c-9491-376bdeed7e8a" color="#A8A8A8"/>
+    <association uuid="8e1d7d36-a543-4f7a-be1f-2e8102f3f3fb" color="#B31F24"/>
+    <association uuid="c6abd049-d92e-4c85-86a2-a988375d2cb7" color="#8A54A2"/>
+    <association uuid="d49d7760-ffbc-496b-b0db-7c8c5468c379" color="#2E63AF"/>
+    <association uuid="d627e19b-b489-4887-a2e1-0618020587b6" color="#0A783D"/>
+    <association uuid="deece07d-1955-42e1-ab32-a92d88c902e9" color="#2E63AF"/>
+    <association uuid="e2c07c75-d3b5-47e8-bedc-d9de465e7cae" color="#F4931F"/>
+    <association uuid="e4e5e8a3-5049-473d-9f3f-0c7b196d9a25" color="#CDC32B"/>
+    <association uuid="ea6cd589-ca7c-469f-b797-daa8153062eb" color="#C774AF"/>
+    <entity uuid="0142fe12-7496-4602-8a3a-2eb2b680f284" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="392" position-y="716" size-x="0" size-x2="96" size-y="0" size-y2="59"/>
+    <entity uuid="149ab5b4-db07-435d-bcd4-26e9220392cb" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="26" position-y="547" size-x="0" size-x2="123" size-y="0" size-y2="115"/>
+    <entity uuid="1999d970-ad16-4a68-8106-01a6bc59e3d5" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="391" position-y="378" size-x="0" size-x2="97" size-y="0" size-y2="59"/>
+    <entity uuid="20367ebe-71e1-451c-a181-47845d8a71d1" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="40" position-y="40" size-x="0" size-x2="96" size-y="0" size-y2="59"/>
+    <entity uuid="21052770-3dff-433c-8452-3599073bafe4" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="380" position-y="547" size-x="0" size-x2="120" size-y="0" size-y2="73"/>
+    <entity uuid="234da387-7e3d-4d88-8d8a-ade264de4d08" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="566" position-y="40" size-x="0" size-x2="100" size-y="0" size-y2="73"/>
+    <entity uuid="2580aca0-91bb-4eba-bd8a-775b10b72389" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="205" position-y="716" size-x="0" size-x2="118" size-y="0" size-y2="129"/>
+    <entity uuid="25939dc2-d5ff-4e43-96f4-aba1b3adc61b" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="44" position-y="209" size-x="0" size-x2="88" size-y="0" size-y2="87"/>
+    <entity uuid="2932376a-8280-47b6-b9fe-fe20986d55f5" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="42" position-y="716" size-x="0" size-x2="92" size-y="0" size-y2="73"/>
+    <entity uuid="2970ff11-65bd-473f-9e46-1a35f6707f0e" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="211" position-y="560" size-x="0" size-x2="103" size-y="0" size-y2="59"/>
+    <entity uuid="509c29ac-cbe4-4e42-9ded-c7eaf6835e8c" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="568" position-y="378" size-x="0" size-x2="96" size-y="0" size-y2="45"/>
+    <entity uuid="59554550-66fd-41de-b843-99e81c61b7ef" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="555" position-y="547" size-x="0" size-x2="122" size-y="0" size-y2="101"/>
+    <entity uuid="81b64d6a-25e9-49be-a49e-ce309d41a43d" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="203" position-y="40" size-x="0" size-x2="122" size-y="0" size-y2="59"/>
+    <entity uuid="9bda4377-e46f-4f26-a19b-57022cd435f5" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="30" position-y="378" size-x="0" size-x2="115" size-y="0" size-y2="87"/>
+    <entity uuid="bcfa82a4-8440-4896-bbbb-e6bb8189c5f8" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="568" position-y="209" size-x="0" size-x2="96" size-y="0" size-y2="87"/>
+    <entity uuid="bd66ac52-25f3-46d1-8d03-757c9bd0e4e9" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="215" position-y="209" size-x="0" size-x2="98" size-y="0" size-y2="59"/>
+    <entity uuid="db2c958f-85b5-480e-ba23-7a9bf8a27c03" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="216" position-y="378" size-x="0" size-x2="96" size-y="0" size-y2="59"/>
+    <entity uuid="e5701850-595f-447f-a45d-650dc8dde6c6" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="372" position-y="40" size-x="0" size-x2="136" size-y="0" size-y2="87"/>
+    <entity uuid="f6cb870f-9b84-4767-b3b7-4bfea0666223" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="392" position-y="209" size-x="0" size-x2="96" size-y="0" size-y2="73"/>
+    <module uuid="7ea4e919-2c6c-4525-963d-8ae6a6ae8fb0" bg-color="#FEFCE8" position-x="50" position-y="50" size-x="0" size-x2="704" size-y="0" size-y2="865"/>
+    <project uuid="120f7ffb-fbce-4c7a-9d87-97b49a900a64" size-x="0" size-x2="804" size-y="0" size-y2="965"/>
+  </visual-data>
+</skipper>

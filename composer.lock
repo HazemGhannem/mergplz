@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "e48ede52576544797f434ca0f76f7632",
     "packages": [
         {
@@ -148,6 +149,11 @@
             "time": "2018-03-27T10:19:41+00:00"
         },
         {
+=======
+    "content-hash": "95ad53589833c9f5df5a2714ec43ca82",
+    "packages": [
+        {
+>>>>>>> yass
             "name": "doctrine/annotations",
             "version": "1.13.2",
             "source": {
@@ -633,6 +639,7 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
+<<<<<<< HEAD
             "version": "2.5.5",
             "source": {
                 "type": "git",
@@ -643,12 +650,28 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/5c086cbbe5327937dd6f90da075f7d421b0f28bc",
                 "reference": "5c086cbbe5327937dd6f90da075f7d421b0f28bc",
+=======
+            "version": "2.5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineBundle.git",
+                "reference": "f1423b2a640b6ac545b6e0c02575427a4dc1e9dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/f1423b2a640b6ac545b6e0c02575427a4dc1e9dc",
+                "reference": "f1423b2a640b6ac545b6e0c02575427a4dc1e9dc",
+>>>>>>> yass
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "^1",
                 "doctrine/cache": "^1.11 || ^2.0",
+<<<<<<< HEAD
                 "doctrine/dbal": "^2.13.1|^3.1",
+=======
+                "doctrine/dbal": "^2.13.1|^3.3.2",
+>>>>>>> yass
                 "doctrine/persistence": "^2.2",
                 "doctrine/sql-formatter": "^1.0.1",
                 "php": "^7.1 || ^8.0",
@@ -662,7 +685,11 @@
                 "symfony/service-contracts": "^1.1.1|^2.0|^3"
             },
             "conflict": {
+<<<<<<< HEAD
                 "doctrine/orm": "<2.9",
+=======
+                "doctrine/orm": "<2.9|>=3.0",
+>>>>>>> yass
                 "twig/twig": "<1.34|>=2.0,<2.4"
             },
             "require-dev": {
@@ -726,7 +753,11 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/DoctrineBundle/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/doctrine/DoctrineBundle/tree/2.5.5"
+=======
+                "source": "https://github.com/doctrine/DoctrineBundle/tree/2.5.6"
+>>>>>>> yass
             },
             "funding": [
                 {
@@ -742,7 +773,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-01-06T08:56:31+00:00"
+=======
+            "time": "2022-02-13T20:17:53+00:00"
+>>>>>>> yass
         },
         {
             "name": "doctrine/doctrine-migrations-bundle",
@@ -1505,6 +1540,76 @@
             "time": "2021-11-05T11:11:14+00:00"
         },
         {
+<<<<<<< HEAD
+=======
+            "name": "dompdf/dompdf",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dompdf/dompdf.git",
+                "reference": "60b704331479a69e9bcdb3496da2315b5c4f94fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/60b704331479a69e9bcdb3496da2315b5c4f94fd",
+                "reference": "60b704331479a69e9bcdb3496da2315b5c4f94fd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-mbstring": "*",
+                "phenx/php-font-lib": "^0.5.4",
+                "phenx/php-svg-lib": "^0.3.3 || ^0.4.0",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "phpunit/phpunit": "^7.5 || ^8 || ^9",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "suggest": {
+                "ext-gd": "Needed to process images",
+                "ext-gmagick": "Improves image processing performance",
+                "ext-imagick": "Improves image processing performance",
+                "ext-zlib": "Needed for pdf stream compression"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dompdf\\": "src/"
+                },
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                },
+                {
+                    "name": "Brian Sweeney",
+                    "email": "eclecticgeek@gmail.com"
+                },
+                {
+                    "name": "Gabriel Bull",
+                    "email": "me@gabrielbull.com"
+                }
+            ],
+            "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
+            "homepage": "https://github.com/dompdf/dompdf",
+            "support": {
+                "issues": "https://github.com/dompdf/dompdf/issues",
+                "source": "https://github.com/dompdf/dompdf/tree/v1.2.0"
+            },
+            "time": "2022-02-07T13:02:10+00:00"
+        },
+        {
+>>>>>>> yass
             "name": "egulias/email-validator",
             "version": "3.1.2",
             "source": {
@@ -1573,6 +1678,7 @@
             "time": "2021-10-11T09:18:27+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "evenement/evenement",
             "version": "v3.0.1",
             "source": {
@@ -1620,6 +1726,8 @@
             "time": "2017-07-23T21:35:13+00:00"
         },
         {
+=======
+>>>>>>> yass
             "name": "friendsofphp/proxy-manager-lts",
             "version": "v1.0.5",
             "source": {
@@ -1702,6 +1810,7 @@
             "time": "2021-05-22T16:11:15+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "gregwar/captcha",
             "version": "v1.1.9",
             "source": {
@@ -1824,6 +1933,8 @@
             "time": "2021-04-20T07:20:37+00:00"
         },
         {
+=======
+>>>>>>> yass
             "name": "guzzlehttp/guzzle",
             "version": "7.4.1",
             "source": {
@@ -2306,6 +2417,7 @@
             "time": "2021-10-30T08:27:46+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "knpuniversity/oauth2-client-bundle",
             "version": "v2.10.0",
             "source": {
@@ -2366,6 +2478,8 @@
             "time": "2022-02-23T15:00:49+00:00"
         },
         {
+=======
+>>>>>>> yass
             "name": "laminas/laminas-code",
             "version": "4.5.1",
             "source": {
@@ -2432,6 +2546,7 @@
             "time": "2021-12-19T18:06:55+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "league/oauth2-client",
             "version": "2.6.1",
             "source": {
@@ -2679,6 +2794,8 @@
             "time": "2021-03-04T21:12:06+00:00"
         },
         {
+=======
+>>>>>>> yass
             "name": "mediumart/orange-sms",
             "version": "2.0.0",
             "source": {
@@ -2828,6 +2945,7 @@
             "time": "2021-10-01T21:08:31+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "mpociot/pipeline",
             "version": "1.0.2",
             "source": {
@@ -2846,15 +2964,40 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "~5.0"
+=======
+            "name": "phenx/php-font-lib",
+            "version": "0.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dompdf/php-font-lib.git",
+                "reference": "dd448ad1ce34c63d09baccd05415e361300c35b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dompdf/php-font-lib/zipball/dd448ad1ce34c63d09baccd05415e361300c35b4",
+                "reference": "dd448ad1ce34c63d09baccd05415e361300c35b4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3 || ^4 || ^5"
+>>>>>>> yass
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
+<<<<<<< HEAD
                     "Mpociot\\Pipeline\\": "src/"
+=======
+                    "FontLib\\": "src/FontLib"
+>>>>>>> yass
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
+<<<<<<< HEAD
                 "MIT"
             ],
             "authors": [
@@ -2908,10 +3051,55 @@
                 ],
                 "psr-4": {
                     "Opis\\Closure\\": "src/"
+=======
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse, export and make subsets of different types of font files.",
+            "homepage": "https://github.com/PhenX/php-font-lib",
+            "support": {
+                "issues": "https://github.com/dompdf/php-font-lib/issues",
+                "source": "https://github.com/dompdf/php-font-lib/tree/0.5.4"
+            },
+            "time": "2021-12-17T19:44:54+00:00"
+        },
+        {
+            "name": "phenx/php-svg-lib",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dompdf/php-svg-lib.git",
+                "reference": "3ffbbb037f0871c3a819e90cff8b36dd7e656189"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dompdf/php-svg-lib/zipball/3ffbbb037f0871c3a819e90cff8b36dd7e656189",
+                "reference": "3ffbbb037f0871c3a819e90cff8b36dd7e656189",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^7.4 || ^8.0",
+                "sabberworm/php-css-parser": "^8.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Svg\\": "src/Svg"
+>>>>>>> yass
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
+<<<<<<< HEAD
                 "MIT"
             ],
             "authors": [
@@ -2939,6 +3127,23 @@
                 "source": "https://github.com/opis/closure/tree/3.6.3"
             },
             "time": "2022-01-27T09:35:39+00:00"
+=======
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse and export to PDF SVG files.",
+            "homepage": "https://github.com/PhenX/php-svg-lib",
+            "support": {
+                "issues": "https://github.com/dompdf/php-svg-lib/issues",
+                "source": "https://github.com/dompdf/php-svg-lib/tree/0.4.0"
+            },
+            "time": "2021-12-17T14:08:35+00:00"
+>>>>>>> yass
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3504,6 +3709,7 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "react/cache",
             "version": "v1.1.1",
             "source": {
@@ -3683,11 +3889,40 @@
                 "ext-event": "~1.0 for ExtEventLoop",
                 "ext-pcntl": "For signal handling support when using the StreamSelectLoop",
                 "ext-uv": "* for ExtUvLoop"
+=======
+            "name": "sabberworm/php-css-parser",
+            "version": "8.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sabberworm/PHP-CSS-Parser.git",
+                "reference": "e41d2140031d533348b2192a83f02d8dd8a71d30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sabberworm/PHP-CSS-Parser/zipball/e41d2140031d533348b2192a83f02d8dd8a71d30",
+                "reference": "e41d2140031d533348b2192a83f02d8dd8a71d30",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "php": ">=5.6.20"
+            },
+            "require-dev": {
+                "codacy/coverage": "^1.4",
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "suggest": {
+                "ext-mbstring": "for parsing UTF-8 CSS"
+>>>>>>> yass
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
+<<<<<<< HEAD
                     "React\\EventLoop\\": "src"
+=======
+                    "Sabberworm\\CSS\\": "src/"
+>>>>>>> yass
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3696,6 +3931,7 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
                     "name": "Christian Lück",
                     "email": "christian@clue.engineering",
                     "homepage": "https://clue.engineering/"
@@ -4061,6 +4297,23 @@
                 }
             ],
             "time": "2021-07-11T12:37:55+00:00"
+=======
+                    "name": "Raphael Schweikert"
+                }
+            ],
+            "description": "Parser for CSS Files written in PHP",
+            "homepage": "https://www.sabberworm.com/blog/2010/6/10/php-css-parser",
+            "keywords": [
+                "css",
+                "parser",
+                "stylesheet"
+            ],
+            "support": {
+                "issues": "https://github.com/sabberworm/PHP-CSS-Parser/issues",
+                "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.4.0"
+            },
+            "time": "2021-12-11T13:40:54+00:00"
+>>>>>>> yass
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -4143,6 +4396,7 @@
             "time": "2020-08-25T19:10:18+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "spatie/macroable",
             "version": "1.0.1",
             "source": {
@@ -4193,6 +4447,8 @@
             "time": "2020-11-03T10:15:05+00:00"
         },
         {
+=======
+>>>>>>> yass
             "name": "symfony/asset",
             "version": "v4.4.37",
             "source": {
@@ -6238,6 +6494,7 @@
         },
         {
             "name": "symfony/mailer",
+<<<<<<< HEAD
             "version": "v4.4.37",
             "source": {
                 "type": "git",
@@ -6248,6 +6505,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/mailer/zipball/603703c41cc3765156b22143b7a585dd10e4cfb6",
                 "reference": "603703c41cc3765156b22143b7a585dd10e4cfb6",
+=======
+            "version": "v4.4.38",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/mailer.git",
+                "reference": "cb843f81cbe16bfd2e17e23d619adb2dddfd0bde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/cb843f81cbe16bfd2e17e23d619adb2dddfd0bde",
+                "reference": "cb843f81cbe16bfd2e17e23d619adb2dddfd0bde",
+>>>>>>> yass
                 "shasum": ""
             },
             "require": {
@@ -6299,7 +6568,11 @@
             "description": "Helps sending emails",
             "homepage": "https://symfony.com",
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/mailer/tree/v4.4.37"
+=======
+                "source": "https://github.com/symfony/mailer/tree/v4.4.38"
+>>>>>>> yass
             },
             "funding": [
                 {
@@ -6315,7 +6588,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-01-02T09:41:36+00:00"
+=======
+            "time": "2022-02-25T07:51:37+00:00"
+>>>>>>> yass
         },
         {
             "name": "symfony/mime",
@@ -7006,12 +7283,21 @@
                 }
             },
             "autoload": {
+<<<<<<< HEAD
                 "psr-4": {
                     "Symfony\\Polyfill\\Mbstring\\": ""
                 },
                 "files": [
                     "bootstrap.php"
                 ]
+=======
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
+>>>>>>> yass
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -7945,6 +8231,7 @@
         },
         {
             "name": "symfony/security-csrf",
+<<<<<<< HEAD
             "version": "v4.4.37",
             "source": {
                 "type": "git",
@@ -7967,6 +8254,30 @@
             },
             "require-dev": {
                 "symfony/http-foundation": "^3.4|^4.0|^5.0"
+=======
+            "version": "v5.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/security-csrf.git",
+                "reference": "57c1c252ca756289c2b61327e08fb10be3936956"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/security-csrf/zipball/57c1c252ca756289c2b61327e08fb10be3936956",
+                "reference": "57c1c252ca756289c2b61327e08fb10be3936956",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/security-core": "^4.4|^5.0|^6.0"
+            },
+            "conflict": {
+                "symfony/http-foundation": "<5.3"
+            },
+            "require-dev": {
+                "symfony/http-foundation": "^5.3|^6.0"
+>>>>>>> yass
             },
             "suggest": {
                 "symfony/http-foundation": "For using the class SessionTokenStorage."
@@ -7997,7 +8308,11 @@
             "description": "Symfony Security Component - CSRF Library",
             "homepage": "https://symfony.com",
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/security-csrf/tree/v4.4.37"
+=======
+                "source": "https://github.com/symfony/security-csrf/tree/v5.4.3"
+>>>>>>> yass
             },
             "funding": [
                 {
@@ -8013,7 +8328,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-01-02T09:41:36+00:00"
+=======
+            "time": "2022-01-02T09:53:40+00:00"
+>>>>>>> yass
         },
         {
             "name": "symfony/security-guard",
@@ -9358,6 +9677,7 @@
             "time": "2022-01-24T20:11:01+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "symfonycasts/reset-password-bundle",
             "version": "v1.12.0",
             "source": {
@@ -9511,6 +9831,8 @@
             "time": "2022-02-16T16:15:54+00:00"
         },
         {
+=======
+>>>>>>> yass
             "name": "twig/extra-bundle",
             "version": "v3.3.8",
             "source": {

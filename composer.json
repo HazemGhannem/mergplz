@@ -7,18 +7,26 @@
         "php": ">=7.1.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
+<<<<<<< HEAD
         "botman/botman": "^2.6",
         "botman/driver-web": "^1.5",
+=======
+>>>>>>> yass
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.5",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.11",
+<<<<<<< HEAD
         "gregwar/captcha-bundle": "*",
         "knplabs/knp-paginator-bundle": "^5.8",
         "knpuniversity/oauth2-client-bundle": "^2.10",
         "league/oauth2-facebook": "^2.2",
         "league/oauth2-github": "^3.0",
         "league/oauth2-google": "^4.0",
+=======
+        "dompdf/dompdf": "^1.2",
+        "knplabs/knp-paginator-bundle": "^5.8",
+>>>>>>> yass
         "mediumart/orange-sms": "^2.0",
         "phpdocumentor/reflection-docblock": "^5.3",
         "sensio/framework-extra-bundle": "^5.1",
@@ -38,16 +46,24 @@
         "symfony/property-info": "4.4.*",
         "symfony/proxy-manager-bridge": "4.4.*",
         "symfony/security-bundle": "4.4.*",
+<<<<<<< HEAD
         "symfony/security-csrf": "4.4.*",
+=======
+>>>>>>> yass
         "symfony/serializer": "4.4.*",
         "symfony/translation": "4.4.*",
         "symfony/twig-bundle": "4.4.*",
         "symfony/validator": "4.4.*",
         "symfony/web-link": "4.4.*",
+<<<<<<< HEAD
         "symfony/web-server-bundle": "4.4.*",
         "symfony/yaml": "4.4.*",
         "symfonycasts/reset-password-bundle": "^1.12",
         "symfonycasts/verify-email-bundle": "^1.8",
+=======
+        "symfony/web-server-bundle": "^4.4",
+        "symfony/yaml": "4.4.*",
+>>>>>>> yass
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
     },

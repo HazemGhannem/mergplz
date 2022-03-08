@@ -1,0 +1,27 @@
+{% extends 'backTemplateResto/chef.html.twig' %}
+
+{% block title %}Chef{% endblock %}
+
+{% block body %}
+    <h1>Chef</h1>
+
+    <table class="table">
+        <tbody>
+           
+            <tr>
+                <th>Nom</th>
+                <td>{{ chef.nom }}</td>
+            </tr>
+            <tr>
+                <th>Specialitee</th>
+                <td>{{ chef.specialitee }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-warning" href="{{ path('chef_index') }}">back to list</a>
+
+    <a class="btn btn-warning" href="{{ path('chef_edit', {'id': chef.id}) }}">edit</a>
+
+    {{ include('chef/_delete_form.html.twig') }}
+{% endblock %}

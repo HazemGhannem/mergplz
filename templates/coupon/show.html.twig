@@ -1,0 +1,39 @@
+{% extends 'backTemplateadmin/coupon.html.twig' %}
+
+{% block title %}Coupon{% endblock %}
+
+{% block body %}
+    <h1>Coupon</h1>
+
+    <table class="table">
+        <tbody>
+          
+            <tr>
+                <th>Nom</th>
+                <td>{{ coupon.nom }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ coupon.code }}</td>
+            </tr>
+             <tr>
+                <th>Pourcentage</th>
+                <td>{{ coupon.pourcentage }}</td>
+            </tr>
+             <tr>
+                <th>Datedebut</th>
+                <td>{{ coupon.datedebut|date('d/m/Y')de }}</td>
+            </tr>
+             <tr>
+                <th>Datefin</th>
+                <td>{{ coupon.datefin|date('d/m/Y') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-dark" href="{{ path('coupon_index') }}">back to list</a>
+
+    <a class="btn btn-dark"  href="{{ path('coupon_edit', {'id': coupon.id}) }}">edit</a>
+
+    {{ include('coupon/_delete_form.html.twig') }}
+{% endblock %}

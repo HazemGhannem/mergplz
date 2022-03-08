@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Images index{% endblock %}
+
+{% block body %}
+    <h1>Images index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Url</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for image in images %}
+            <tr>
+                <td>{{ image.id }}</td>
+                <td>{{ image.nom }}</td>
+                <td>{{ image.url }}</td>
+                <td>
+                    <a href="{{ path('images_show', {'id': image.id}) }}">show</a>
+                    <a href="{{ path('images_edit', {'id': image.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('images_new') }}">Create new</a>
+{% endblock %}

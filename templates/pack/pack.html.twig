@@ -1,0 +1,47 @@
+{% extends 'backTemplateResto/Pack.html.twig' %}
+
+{% block title %}Pack index{% endblock %}
+
+{% block body %}
+<style>
+.wrapper {
+	
+	border:solid;
+    width:470px;
+    font: 18px / 1.5 sans-serif; 
+}
+
+		</style>
+ <h1>Pack </h1>
+ <table class="table">
+        <tbody>
+            <tr>
+            
+               {% for pack in packs %}
+                 <td>
+                 <div class="wrapper">
+                <center> <div class="mm-spacer-r">
+                 <h2 class="mm-title"> {{ pack.type }}</h2>
+                 <div class="rt-center "> A partir de </div>
+                 <h3 class="rt-center"> {{ pack.prix }} $ </h3>
+                 <div class="rt-center "> Par mois </div>
+                 <p> </p>
+                  <div class="rt-center "> {{ pack.description }} </div>
+                 <p> </p>    
+                 <a class="btn btn-dark" href="  ">Acheter</a>
+
+                 </div></center>
+                  </div>
+                 </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <div class="container py-5">
+		<div class="d-flex justify-content-center">
+ {{ knp_pagination_render(packs) }}
+
+</div>
+	</div>
+
+{% endblock %}

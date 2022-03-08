@@ -1,0 +1,50 @@
+{% extends 'backTemplateResto/plat.html.twig' %}
+
+{% block title %}Plat index
+{% endblock %}
+
+{% block body %}
+	<h1>Gestion des  Plats</h1>
+
+
+	<table class="table">
+		<thead>
+			<tr>
+
+				<th>Nom</th>
+				<th>Description</th>
+				<th>prix</th>
+				<th>Images</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for plat in plats %}
+				<tr>
+
+					<td>{{ plat.nom }}</td>
+					<td>{{ plat.description }}</td>
+					<td>{{ plat.prix }}</td>
+					<td>
+						<img id="img" class="card-img-top img-fluid" style="height: 150px; width:150px;" src="/uploads/{{plat.img}}"></td>
+					<td>
+						<a class="btn btn-warning" href="{{ path('plat_show', {'id': plat.id}) }}">show</a>
+						<a class="btn btn-warning" href="{{ path('plat_edit', {'id': plat.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">Aucun Plat trouvé</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a class="btn btn-dark" href="{{ path('plat_new') }}">Create new</a>
+	<div class="container py-5">
+		<div class="d-flex justify-content-center">
+
+			{{ knp_pagination_render(plats) }}
+		</div>
+	</div>
+{% endblock %} 

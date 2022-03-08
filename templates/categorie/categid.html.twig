@@ -1,0 +1,109 @@
+{% extends 'frontTemplate/frontBase.html.twig' %}
+
+{% block title %}Plat index
+{% endblock %}
+
+{% block body %}
+
+</div></div>{% block javascripts %}{% endblock %}<div class="album py-5 bg-light">
+<div class="container px-4 px-lg-5 mt-5">
+	<div class="row flex-center mb-6">
+		<div class="sidebar-search">
+
+			<div class="input-group custom-search-form">
+
+				<input type="text" id="search" class="form-control" placeholder="Search here">
+			</div>
+		</div>
+		<!-- /input-group -->
+	</div>
+	<ul class="nav" id="side-menu">
+		<li>
+
+			<ul class="nav nav-second-level" id="entitiesNav"></ul>
+		</li>
+	</ul><br><br><br><br>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function () {
+var searchRequest = null;
+$("#search").keyup(function () {
+var minlength = 1;
+var that = this;
+var value = $(this).val();
+var entitySelector = $("#entitiesNav").html('');
+if (value.length >= minlength) {
+if (searchRequest != null) 
+searchRequest.abort();
+
+
+
+searchRequest = $.ajax({
+type: "GET",
+url: "{{ path('ajax_search') }}",
+data: {
+'q': value
+},
+dataType: "text",
+success: function (msg) { // we need to check if the value is the same
+if (value === $(that).val()) {
+var result = JSON.parse(msg);
+$.each(result, function (key, arr) {
+$.each(arr, function (id, value) {
+if (key === 'plats') {
+if (id !== 'error') {
+console.log(value[1]);
+entitySelector.append('<li><b>' + value[1] + '</b><a href="/plat/Search/' + id + '">' + '<img src="/uploads/' + value[0] + '" style="width: 50px; height: 50px"/>' + '</a></li>');
+} else {
+entitySelector.append('<li class="errorLi">' + value + '</li>');
+}
+}
+});
+});
+}
+}
+});
+}
+});
+});
+	</script>
+</div>
+<div class="container">
+	<h1 class="fw-bolder mb-4">Listes des  Plats</h1>
+
+
+	<div class="container sm-1">
+		<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+			{% for plat in plat %}
+
+				<div class="card mx-2 py-4">
+
+
+					<a href="{{ path('platshow', {id: plat.id}) }}"></a>
+
+
+					<img class="img-fluid img-top rounded-3 w-100" style="height:200px;" src="{{asset('uploads/') ~ plat.img}}" alt="...">
+
+
+					<h5 class="card-text" class="text-center">{{plat.nom}}</h5>
+					<p class="card-text">{{plat.description}}</p>
+
+
+					<div class="card-footer text-center">
+						<a class="btn btn-outline-warning" href="{{ path('platshow', {'id': plat.id}) }}">View options</a>
+					</div>
+
+
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="container py-5">
+		<div class="d-flex justify-content-center">
+
+			{{ knp_pagination_render(plat) }}
+		</div>
+	</div>
+</section>{% endblock %}

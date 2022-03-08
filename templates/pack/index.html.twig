@@ -1,0 +1,45 @@
+{% extends 'backTemplateadmin/pack.html.twig' %}
+
+{% block title %}Pack {% endblock %}
+
+{% block body %}
+    <h1>Pack index</h1>
+
+    <table class="table">
+    
+        <thead>
+            <tr>
+                
+                <th>Type</th>
+                <th>Prix</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pack in packs %}
+            <tr>
+                
+                <td>{{ pack.type }}</td>
+                <td>{{ pack.prix }}</td>
+                <td>{{ pack.description }}</td>
+                <td>
+                    <a class="btn btn-dark" href="{{ path('pack_show', {'id': pack.id}) }}">show</a>
+                    <a class="btn btn-dark" href="{{ path('pack_edit', {'id': pack.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn" href="{{ path('pack_new') }}">Create new</a>
+    <div class="container py-5">
+		<div class="d-flex justify-content-center">
+ {{ knp_pagination_render(packs) }}
+
+</div>
+	</div>
+{% endblock %}

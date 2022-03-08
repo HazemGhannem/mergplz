@@ -1,0 +1,13 @@
+{% extends 'backTemplateResto/chef.html.twig' %}
+
+{% block title %}Edit Chef{% endblock %}
+
+{% block body %}
+    <h1>Edit Chef</h1>
+
+    {{ include('chef/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('chef_index') }}">back to list</a>
+
+    {{ include('chef/_delete_form.html.twig') }}
+{% endblock %}

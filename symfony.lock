@@ -1,10 +1,13 @@
 {
+<<<<<<< HEAD
     "botman/botman": {
         "version": "2.6.1"
     },
     "botman/driver-web": {
         "version": "1.5.1"
     },
+=======
+>>>>>>> yass
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
@@ -83,6 +86,7 @@
     "doctrine/sql-formatter": {
         "version": "1.1.2"
     },
+<<<<<<< HEAD
     "egulias/email-validator": {
         "version": "3.1.2"
     },
@@ -98,6 +102,17 @@
     "gregwar/captcha-bundle": {
         "version": "v2.1.5"
     },
+=======
+    "dompdf/dompdf": {
+        "version": "v1.2.0"
+    },
+    "egulias/email-validator": {
+        "version": "3.1.2"
+    },
+    "friendsofphp/proxy-manager-lts": {
+        "version": "v1.0.5"
+    },
+>>>>>>> yass
     "guzzlehttp/guzzle": {
         "version": "7.4.1"
     },
@@ -113,6 +128,7 @@
     "knplabs/knp-paginator-bundle": {
         "version": "v5.8.0"
     },
+<<<<<<< HEAD
     "knpuniversity/oauth2-client-bundle": {
         "version": "2.10",
         "recipe": {
@@ -137,30 +153,50 @@
     "league/oauth2-google": {
         "version": "4.0.0"
     },
+=======
+    "laminas/laminas-code": {
+        "version": "4.5.1"
+    },
+>>>>>>> yass
     "mediumart/orange-sms": {
         "version": "2.0.0"
     },
     "monolog/monolog": {
         "version": "1.26.1"
     },
+<<<<<<< HEAD
     "mpociot/pipeline": {
         "version": "1.0.2"
     },
+=======
+>>>>>>> yass
     "myclabs/deep-copy": {
         "version": "1.10.2"
     },
     "nikic/php-parser": {
         "version": "v4.13.2"
     },
+<<<<<<< HEAD
     "opis/closure": {
         "version": "3.6.3"
     },
+=======
+>>>>>>> yass
     "phar-io/manifest": {
         "version": "2.0.3"
     },
     "phar-io/version": {
         "version": "3.1.1"
     },
+<<<<<<< HEAD
+=======
+    "phenx/php-font-lib": {
+        "version": "0.5.4"
+    },
+    "phenx/php-svg-lib": {
+        "version": "0.4.0"
+    },
+>>>>>>> yass
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
     },
@@ -226,6 +262,7 @@
     "ralouphie/getallheaders": {
         "version": "3.0.3"
     },
+<<<<<<< HEAD
     "react/cache": {
         "version": "v1.1.1"
     },
@@ -246,6 +283,10 @@
     },
     "react/stream": {
         "version": "v1.2.0"
+=======
+    "sabberworm/php-css-parser": {
+        "version": "8.4.0"
+>>>>>>> yass
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
@@ -307,9 +348,12 @@
             "./config/packages/sensio_framework_extra.yaml"
         ]
     },
+<<<<<<< HEAD
     "spatie/macroable": {
         "version": "1.0.1"
     },
+=======
+>>>>>>> yass
     "symfony/asset": {
         "version": "v4.4.37"
     },
@@ -673,6 +717,7 @@
     "symfony/yaml": {
         "version": "v4.4.37"
     },
+<<<<<<< HEAD
     "symfonycasts/reset-password-bundle": {
         "version": "1.12",
         "recipe": {
@@ -694,6 +739,11 @@
     "tightenco/collect": {
         "version": "v8.83.2"
     },
+=======
+    "theseer/tokenizer": {
+        "version": "1.2.1"
+    },
+>>>>>>> yass
     "twig/extra-bundle": {
         "version": "v3.3.8"
     },
